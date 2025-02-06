@@ -44,6 +44,34 @@ Clicar no botão de pesquisa
 Verificar o resultado da pesquisa, listando o produto "${PRODUTO}"
     Wait Until Element Is Visible    locator=(//span[contains(.,'${PRODUTO}')])[3]
 
+Clicar no produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=//img[contains(@alt,'${PRODUTO}')]
+    Click Element    locator=//img[contains(@alt,'${PRODUTO}')]
+
+Clicar no botao Adicionar ao Carrinho
+    Wait Until Element Is Visible    locator=//input[contains(@name,'submit.add-to-cart')]
+    Click Element    locator=//input[contains(@name,'submit.add-to-cart')]
+
+Adicionar o produto "${PRODUTO}" no carrinho
+    Clicar no produto "${PRODUTO}"
+    Clicar no botao Adicionar ao Carrinho
+
+Navegar ate a pagina do Carrinho
+    Wait Until Element Is Visible    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+    Click Element    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+
+Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
+    Wait Until Element Is Visible    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+    Click Element    locator=//span[@aria-hidden='true'][contains(.,'Carrinho')]
+    Wait Until Element Is Visible    locator=//span[@class='a-truncate-cut'][contains(.,'${PRODUTO}')]
+
+Remover o produto "${PRODUTO}" do carrinho
+    Wait Until Element Is Visible    locator=//button[contains(@aria-label,'Excluir ${PRODUTO}')]
+    Click Button    locator=//button[@aria-label='Excluir Console Xbox Series S']
+
+Verificar se o produto "${PRODUTO}" é retirado do carrinho 
+    Page Should Contain    text=${PRODUTO}
+    Page Should Contain    text=foi removido de Carrinho de compras.
 
 # GUERKIN STEPS
 
