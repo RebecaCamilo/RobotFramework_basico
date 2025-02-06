@@ -3,7 +3,7 @@ Documentation   Exemplo de uso de variáveis como argumentos em Keywords
 
 
 *** Variables ***
-&{PESSOA}       nome=May Fernandes   email=mayfernandes@exemplo.com.br   idade=20   sexo=feminino
+&{PESSOA}       nome=May Fernandes   email=mayfernandes@exemplo.com.br   idade=15   sexo=feminino
 
 
 *** Test Cases ***
@@ -25,5 +25,5 @@ Uma subkeyword com argumentos
 
 Uma subkeyword com retorno
     [Arguments]     ${NOME_USUARIO}   ${IDADE_USUARIO}
-    ${MENSAGEM}     Set Variable If    ${IDADE_USUARIO}<18    Não autorizado! O usuário ${NOME_USUARIO} é menor de idade!   OK!Usuário é maior de idade!
-    [Return]        ${MENSAGEM}
+    ${MENSAGEM}     Set Variable If    ${IDADE_USUARIO}<18    Não autorizado! O usuário ${NOME_USUARIO} é menor de idade!   OK! Usuário é maior de idade!
+    RETURN        ${MENSAGEM}
