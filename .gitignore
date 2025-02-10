@@ -1,0 +1,8 @@
+/ExemplosEstruturas/results/*
+/ExemplosEstruturas/resultsIf/*
+/VariaveisEscoposArgumentos/results/*
+/WebTesting/results/*
+/WebTesting/results-bdd/*
+*.png
+user_data.py
+__pycache__
