@@ -69,7 +69,7 @@ Remover o produto "${PRODUTO}" do carrinho
     Wait Until Element Is Visible    locator=//button[contains(@aria-label,'Excluir ${PRODUTO}')]
     Click Button    locator=//button[@aria-label='Excluir Console Xbox Series S']
 
-Verificar se o produto "${PRODUTO}" é retirado do carrinho 
+Verificar se o produto "${PRODUTO}" é retirado do carrinho
     Page Should Contain    text=${PRODUTO}
     Page Should Contain    text=foi removido de Carrinho de compras.
 
@@ -100,3 +100,12 @@ Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
 
 E um produto da linha "Xbox Series S" deve ser mostrado na página
     Verificar o resultado da pesquisa, listando o produto "Console Xbox Series S"
+
+E um produto "${PRODUTO}" ser adicionado ao carrinho
+    Adicionar o produto "${PRODUTO}" no carrinho
+
+Então o produto "${PRODUTO}" deve ser visualizado na página do carrinho
+    Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
+
+E o produto "${PRODUTO}" deve ser removido do carrinho com sucesso
+    Verificar se o produto "${PRODUTO}" é retirado do carrinho
